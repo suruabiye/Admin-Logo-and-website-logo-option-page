@@ -11,6 +11,15 @@
     
      * */ 
      
+     // This help to apply owned stylesheet to admin backend/dashboard..
+     function load_custom_wp_admin_style(){
+        wp_register_style('custom_wp_admin_css', get_template_directory_uri(). '/css/bootstrap.css', false, '1.0.0');
+        wp_register_style('custom_wp_admin_css2', get_template_directory_uri(). '/css/admin.css', false, '1.0.0');
+        wp_enqueue_style('custom_wp_admin_css');
+        wp_enqueue_style('custom_wp_admin_css2');
+     }
+     add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style');
+     
      
      add_theme_support('post-formats',array('link'));
      // Menu areas
